@@ -23,7 +23,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
           <li
             key={pgNumber}
             className={`page-item ${
-              currentPage === pgNumber ? "active" : "page-item"
+              currentPage === pgNumber ? "active" : "null"
             }`}
           >
             <a
