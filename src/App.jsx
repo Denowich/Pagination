@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Posts from "./components/Posts";
+import React, { useEffect, useState } from "react";
 import Pagination from "./components/Pagination";
+import Posts from "./components/Posts";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPosts] = useState(10);
+  const [postsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,11 +22,11 @@ const App = () => {
     fetchPosts();
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPosts;
-  const indexOfFirstPost = indexOfLastPost - postsPerPosts;
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
-  const nPages = Math.ceil(posts.length / postsPerPosts);
+  const nPages = Math.ceil(posts.length / postsPerPage);
 
   return (
     <div className="p-3 mb-2 bg-warning text-dark">

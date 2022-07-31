@@ -15,7 +15,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
     <nav>
       <ul className="pagination justify-content-center">
         <li className="page-item">
-          <a className="btn btn-primary mr-1" onClick={prevPage} href="!#">
+          <a onClick={prevPage} className="btn btn-primary" href="!#">
             Prev
           </a>
         </li>
@@ -23,20 +23,20 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
           <li
             key={pgNumber}
             className={`page-item ${
-              currentPage === pgNumber ? "active" : "null"
+              currentPage === pgNumber ? "active" : null
             }`}
           >
             <a
               onClick={() => setCurrentPage(pgNumber)}
-              className="page-link text-dark"
+              className="page-link"
               href="!#"
             >
               {pgNumber}
             </a>
           </li>
         ))}
-        <li className="page-item">
-          <a className="btn btn-primary" onClick={nextPage} href="!#">
+        <li className="post-item">
+          <a onClick={nextPage} className="btn btn-primary" href="!#">
             Next
           </a>
         </li>
