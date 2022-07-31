@@ -35,7 +35,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
             </a>
           </li>
         ))}
-        <li className="post-item">
+        <li className="page-item">
           <a onClick={nextPage} className="btn btn-primary" href="!#">
             Next
           </a>
